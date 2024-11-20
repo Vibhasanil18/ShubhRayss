@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Trivia Quiz{% endblock %}
+{% block content %}
+<!-- Page Header with Glow and Fade-In Animation -->
+<header class="text-center my-5 animated fadeIn">
+    <h1 class="display-4 font-weight-bold text-warning glow-text">✨ Diwali Trivia Quiz ✨ </h1>
+    <p class="lead text-muted">Test your knowledge about the festival of lights!</p>
+</header>
+
+<!-- Quiz Form with Floating and Animated Options -->
+<section class="container mb-5">
+    <div class="card shadow-lg border-0 rounded animated slideInUp">
+        <div class="card-body">
+            <form method="POST">
+                {% csrf_token %}
+                {% for question in questions %}
+                <div class="mb-4 animated fadeInUp">
+                    <p class="h5 text-dark"><strong>{{ forloop.counter }}. {{ question.question_text }}</strong></p>
+                    <div class="mt-3">
+                        <label class="option-label animated fadeInUp">
+                            <input type="radio" name="question_{{ question.id }}" value="A" class="option-input">
+                            <span class="option-text">{{ question.option_a }}</span>
+                        </label><br>
+                        <label class="option-label animated fadeInUp">
+                            <input type="radio" name="question_{{ question.id }}" value="B" class="option-input">
+                            <span class="option-text">{{ question.option_b }}</span>
+                        </label><br>
+                        <label class="option-label animated fadeInUp">
+                            <input type="radio" name="question_{{ question.id }}" value="C" class="option-input">
+                            <span class="option-text">{{ question.option_c }}</span>
+                        </label><br>
+                        <label class="option-label animated fadeInUp">
+                            <input type="radio" name="question_{{ question.id }}" value="D" class="option-input">
+                            <span class="option-text">{{ question.option_d }}</span>
+                        </label>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="text-center animated bounceIn">
+                    <button type="submit" class="btn btn-warning btn-lg w-100 glow-button">Submit Quiz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

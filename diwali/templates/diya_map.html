@@ -1,0 +1,36 @@
+<!-- diya_map.html -->
+{% extends 'base.html' %}
+
+{% block title %}Lighting the Diyas{% endblock %}
+
+{% block content %}
+<div class="container text-center py-5">
+    <h1 class="display-4 text-warning fw-bold mb-4">🌟 Light the Diyas 🌟</h1>
+    <p class="lead text-secondary mb-5">
+        Click on the unlit diyas to light them up and bring warmth to the festival.
+    </p>
+
+    <div class="row g-4">
+        {% for diya in diyas %}
+        <div class="col-3 text-center">
+            <!-- Form to toggle diya status -->
+            <form method="post" action="{% url 'toggle_diya' diya.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn diya-btn {% if diya.status %}lit{% else %}unlit{% endif %}">
+                    {% if diya.status %}
+                    🪔 Lit
+                    {% else %}
+                    💡 Unlit
+                    {% endif %}
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2 class="text-center text-success mt-5">
+        🌟 Total Diyas Lit: <span class="text-warning">{{ lit_count }}</span> 🌟
+    </h2>
+</div>
+<div><br><br><br><br><br></div>
+{% endblock %}

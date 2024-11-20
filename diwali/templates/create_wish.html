@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create Diwali Wish{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <!-- Header Section -->
+    <div class="text-center mb-4">
+        <h1 class="display-4 text-warning mb-4">✨ Create Your Personalized Diwali Wish ✨</h1>
+        <p class="lead">Spread the light of joy and positivity with a heartfelt message this festive season!</p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="card shadow-lg p-4 rounded">
+        <h3 class="text-center mb-3">Fill in the Details Below</h3>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="mb-4">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-4">
+                <label for="favorite_sweet" class="form-label">Favorite Sweet</label>
+                <input type="text" class="form-control" id="favorite_sweet" name="favorite_sweet" required>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-warning btn-lg">Generate Wish</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Display Message Section -->
+    {% if messages %}
+    <div class="alert alert-info mt-4 text-center shadow-sm animate__animated animate__fadeInUp">
+        <h4>Your Personalized Wish:</h4>
+        {% for message in messages %}
+        <p class="mb-0" style="font-style: italic;">{{ message }}</p>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

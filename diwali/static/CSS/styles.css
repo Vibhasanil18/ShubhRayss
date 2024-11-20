@@ -1,0 +1,697 @@
+/* ShubhRays – "Shubh" meaning auspicious, and "Rays" symbolizing the lights of Diwali. */
+
+/* Body background and font */
+body {
+    background: linear-gradient(to bottom, #fff8e1, #fce4ec); /* Light gradient for subtle sophistication */
+    font-family: 'Roboto', sans-serif; /* Modern professional font */
+    color: #333; /* Neutral text color for readability */
+    margin-top: 56px; /* To account for the fixed navbar */
+}
+
+/* Navbar styles */
+.navbar {
+    background: linear-gradient(90deg, #f57c00, #ef5350); /* Gradient with warm festive tones */
+    border-bottom: 2px solid #ffcc00; /* Subtle gold underline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff !important;
+    text-transform: uppercase; /* Adds professionalism */
+    letter-spacing: 2px; /* Slight spacing for a modern look */
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.nav-link:hover {
+    color: #ffcc00 !important; /* Gold hover effect */
+    transform: scale(1.1); /* Subtle enlargement */
+}
+
+/* Account Dropdown */
+.navbar-nav .nav-item.dropdown .dropdown-toggle {
+    color: #bca11b;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-toggle .rounded-circle {
+    margin-right: 10px; /* Space between image and text */
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu {
+    background-color: #ffffff; /* Light background for the dropdown */
+    border: 1px solid #ffcc00; /* Gold border for consistency */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item {
+    color: #333; /* Dark text for readability */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.navbar-nav .nav-item.dropdown .dropdown-menu .dropdown-item:hover {
+    background-color: #ffcc00; /* Gold background on hover */
+    color: #ffffff; /* White text on hover */
+}
+
+/* Adjustments for profile picture */
+.navbar-nav .nav-item.dropdown img {
+    border-radius: 50%;  /* Circular image */
+    width: 40px;  /* Fixed width for the profile picture */
+    height: 40px; /* Fixed height */
+}
+
+
+/* Main Container Styling */
+#diwali-main {
+    padding: 60px 30px;
+    background: radial-gradient(circle at top left, #fdbb2d, #ff566f, #ff3366); /* Radiant gradient */
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow for a bold look */
+    color: #ffffff; /* White text for better contrast */
+    text-align: center;
+    animation: glow 6s infinite alternate; /* Subtle glowing effect */
+}
+
+/* Glowing Animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 86, 111, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 51, 102, 0.8);
+    }
+}
+
+/* Title Styling */
+#diwali-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #d4bdb1;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); /* Deeper glow for a festive vibe */
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* Description Styling */
+#diwali-description {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #ffebd2;
+    line-height: 1.8;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+#explore-button, #register-button {
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4); /* Soft pink gradient */
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 35px;
+    border-radius: 30px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Elevated look */
+    text-decoration: none;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#explore-button:hover, #register-button:hover {
+    background: linear-gradient(90deg, #fad0c4, #ff9a9e); /* Reverse gradient */
+    transform: scale(1.05); /* Subtle scaling */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    text-decoration: none;
+}
+
+/* Login Link Styling */
+#login-link {
+    color: #ffc94b;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+#login-link:hover {
+    color: #ffd966; /* Brighter gold for hover */
+    border-bottom: 2px solid #ffd966;
+    text-decoration: none;
+}
+
+/* Subtext Styling */
+#subtext {
+    font-size: 1rem;
+    color: #ffc107;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+
+/* General Spacing */
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+
+/* Login Prompt Container */
+#login-prompt {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #f7e8d8; /* Soft ivory for readability */
+    text-align: center;
+    margin-top: 1.5rem;
+    animation: fadeIn 2s ease-in; /* Smooth fade-in animation */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Keyframe for Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Moves upward on appearance */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Login Link Styling */
+#login-link {
+    color: #ffc94b; /* Bright gold */
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#login-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ffc94b, #ff6f61); /* Festive gradient underline */
+    transition: width 0.4s ease;
+}
+
+#login-link:hover {
+    color: #ff6f61; /* Reddish tone for hover effect */
+    text-shadow: 0 0 10px rgba(255, 111, 97, 0.8); /* Glowing effect */
+}
+
+#login-link:hover::before {
+    width: 100%; /* Expands the underline */
+}
+
+
+/* Footer styling */
+footer {
+    background: #2c2c2c; /* Neutral dark background for contrast */
+    color: #ffffff; /* White text for readability */
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    border-top: 3px solid #ffcc00; /* Gold accent at the top */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+footer p {
+    margin: 0;
+    color: #cccccc; /* Subtle gray for a professional look */
+}
+
+footer p:hover {
+    color: #ffcc00; /* Gold hover effect */
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7); /* Glowing text on hover */
+}
+
+
+/* Social Icons in Footer */
+footer .social-icons a {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: #ffcc00; /* Gold hover effect */
+    transform: scale(1.1); /* Slight enlargement */
+}
+
+/* Animation for header text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    animation: fadeIn 1s ease-out; /* Slide-in animation */
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    footer {
+        font-size: 0.8rem;
+    }
+}
+/* Main container styling */
+main {
+    background: linear-gradient(135deg, #ffcc80, #ff8a80); /* Warm festive gradient */
+    padding: 60px 20px;
+    border-radius: 15px; /* Smooth corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    animation: fadeInMain 1.5s ease-in-out; /* Entry animation */
+    margin: 40px auto;
+}
+
+/* Typography for the heading */
+main h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff; /* White text for contrast */
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.3); /* Light glow effect */
+    animation: slideInFromLeft 1s ease-in; /* Slide-in animation for heading */
+}
+
+/* Subheading styling */
+main p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #f5f5f5; /* Subtle light gray */
+    margin-top: 20px;
+    animation: fadeInText 2s ease-out; /* Smooth fade-in animation for text */
+}
+
+/* Button styling */
+main a.btn {
+    background: linear-gradient(90deg, #ffcc00, #ffa726); /* Modern gold-orange gradient */
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border-radius: 30px; /* Rounded button for elegance */
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for depth */
+    text-transform: uppercase; /* Professional touch */
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+main a.btn:hover {
+    background: linear-gradient(90deg, #ffa726, #ffcc00); /* Reverse gradient on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    text-decoration: none; /* No underline */
+}
+
+
+
+
+/* Animations */
+@keyframes fadeInMain {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    main {
+        padding: 40px 10px;
+    }
+
+    main h1 {
+        font-size: 2.5rem;
+    }
+
+    main p {
+        font-size: 1rem;
+    }
+
+    main a.btn {
+        font-size: 1rem;
+        padding: 10px 30px;
+    }
+}
+
+/* Text gradient for headings */
+
+
+
+/* Card shadow for professional look */
+.card {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button hover effect */
+.btn-warning:hover {
+    background: linear-gradient(90deg, #ffcc00, #ffa726);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/*sweet shop*//* Button Gradient */
+.btn-gradient {
+    background: linear-gradient(90deg, #6c63ff, #6a5acd); /* Gradient color effect for button */
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px; /* Rounded corners for modern look */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(90deg, #6a5acd, #6c63ff);
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+/* Table Styling */
+.table {
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1; /* Light hover effect */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #fafafa; /* Alternate row color */
+}
+
+.table-bordered {
+    border: 2px solid #ddd; /* Table border with clean lines */
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    text-align: center; /* Center align text */
+}
+
+.table-light th {
+    background-color: #f9f9f9; /* Light header background */
+    font-weight: bold;
+}
+
+/* Card Styling for Form */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Smooth shadow effect */
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4c6ef5; /* Fresh blue color */
+}
+
+/* Form Input Fields */
+.form-control {
+    border-radius: 8px; /* Rounded input fields */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+    border-color: #6c63ff; /* Focus color */
+}
+
+form {
+    width: 50%;
+    margin: 0 auto; /* Center the form */
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 80%; /* Make the form more responsive on smaller screens */
+    }
+}
+
+/* Button Styling */
+.btn-warning {
+    background-color: #FFD700; /* Gold button color for Diwali theme */
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn-warning:hover {
+    background-color: #FFC107; /* Slightly darker gold on hover */
+    transform: translateY(-2px);
+}
+
+/* Header Styling */
+header h1 {
+    color: #FF6F00; /* Warm orange color for header */
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.25rem;
+    color: #6B2E1C; /* Muted brown for subheading */
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.card-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #800000; /* Deep maroon color for titles */
+}
+
+/* Input Fields */
+.form-control {
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+    border-color: #FF6F00; /* Warm orange for focus state */
+}
+
+/* Table Styling */
+table {
+    background-color: #FFF; /* White background for table */
+}
+
+table th, table td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Table Row Hover Effect */
+table tbody tr:hover {
+    background-color: #FFECB3; /* Light gold background on row hover */
+}
+
+/* Table Accent Color */
+.table-warning {
+    background-color: #FFEB3B; /* Light yellow background for table headers */
+}
+
+/* Text Styling */
+.text-warning {
+    color: #FFD700; /* Gold color for important text */
+}
+
+.text-muted {
+    color: #6B2E1C; /* Muted brown for secondary text */
+}
+
+/* General Styling */
+.font-weight-bold {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .card-body {
+        padding: 20px;
+    }
+
+    .btn-warning {
+        font-size: 1rem;
+    }
+}
+
+/* festive */
+/* Navbar Branding Styling */
+.navbar-brand {
+    font-family: 'Poppins', sans-serif; /* Modern font style */
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #FF6F61; /* Festive Coral-Red for Diwali theme */
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    position: relative;
+    padding-right: 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Hover Effect with a Soft Glow */
+.navbar-brand:hover {
+    color: #FFD700; /* Gold Highlight on Hover */
+    transform: translateX(5px); /* Slight right shift effect */
+}
+
+/* Decorative Element: Diya (Lamp) */
+.navbar-brand:before {
+    content: "🪔"; /* Diya Emoji */
+    font-size: 1.5rem;
+    margin-right: 10px;
+    animation: light-flicker 1.5s infinite ease-in-out; /* Flicker Animation */
+}
+
+/* Glow Effect for Flickering Light */
+@keyframes light-flicker {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Adding a subtle animation for text shine */
+.navbar-brand {
+    animation: text-shine 2s ease-out infinite alternate;
+}
+
+/* Text Shine Effect */
+@keyframes text-shine {
+    0% {
+        text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00, 0 0 45px #ffcc00;
+    }
+    100% {
+        text-shadow: 0 0 20px #ff6f61, 0 0 40px #ff6f61, 0 0 60px #ff6f61;
+    }
+}
+
+/* Responsive Logo: Smaller size for mobile */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+}
+
+
+
+
+
+/* Fade-out effect for alerts */
+/*
+.alert {
+    animation: fadeOut 3s ease forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+*/
+/* Optional: to hide the element after fade-out */
+/*
+.alert.alert-dismissible {
+    display: block;
+}
+
+.alert.alert-dismissible.fade-out {
+    display: none;
+}
+*/
+
+
+
+

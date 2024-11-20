@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sweet Shop Inventory{% endblock %}
+{% block content %}
+<!-- Page Header -->
+<header class="text-center my-5">
+    <h1 class="display-4 font-weight-bold text-warning">✨ Sweet Shop Inventory ✨</h1>
+    <p class="lead text-muted">Manage and track your sweet inventory effortlessly, and celebrate the festive spirit!</p>
+</header>
+
+<!-- Display Messages (Success/Error) -->
+{% if messages %}
+    <div class="container">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade-out" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Add Sweet Form -->
+<section class="container mb-5">
+    <div class="card shadow-lg border-0 rounded">
+        <div class="card-body">
+            <h3 class="card-title text-center text-dark">Add New Sweet</h3>
+            <form method="POST" enctype="multipart/form-data">  <!-- Added enctype for file upload -->
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label for="name" class="form-label">Sweet Name</label>
+                    <input type="text" class="form-control shadow-sm" id="name" name="name" required placeholder="Enter sweet name">
+                </div>
+                <div class="mb-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control shadow-sm" id="price" name="price" step="0.01" required placeholder="Enter price">
+                </div>
+                <div class="mb-4">
+                    <label for="stock" class="form-label">Stock</label>
+                    <input type="number" class="form-control shadow-sm" id="stock" name="stock" required placeholder="Enter stock quantity">
+                </div>
+                <div class="mb-4">
+                    <label for="image" class="form-label">Image</label>  <!-- Added image upload field -->
+                    <input type="file" class="form-control shadow-sm" id="image" name="image">
+                </div>
+                <button type="submit" name="add_sweet" class="btn btn-warning btn-lg w-100">Add Sweet</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Update Inventory Form -->
+<section class="container mb-5">
+    <div class="card shadow-lg border-0 rounded">
+        <div class="card-body">
+            <h3 class="card-title text-center text-dark">Update Inventory</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label for="sweet_id" class="form-label">Select Sweet</label>
+                    <select class="form-control shadow-sm" id="sweet_id" name="sweet_id">
+                        {% for sweet in sweets %}
+                            <option value="{{ sweet.id }}">{{ sweet.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="stock" class="form-label">Stock to Add</label>
+                    <input type="number" class="form-control shadow-sm" id="stock" name="stock" required placeholder="Enter stock to add">
+                </div>
+                <button type="submit" name="update_inventory" class="btn btn-warning btn-lg w-100">Update Inventory</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Sell Sweet Form -->
+<section class="container mb-5">
+    <div class="card shadow-lg border-0 rounded">
+        <div class="card-body">
+            <h3 class="card-title text-center text-dark">Sell Sweet</h3>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label for="sweet_id" class="form-label">Select Sweet</label>
+                    <select class="form-control shadow-sm" id="sweet_id" name="sweet_id">
+                        {% for sweet in sweets %}
+                            <option value="{{ sweet.id }}">{{ sweet.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="quantity_sold" class="form-label">Quantity Sold</label>
+                    <input type="number" class="form-control shadow-sm" id="quantity_sold" name="quantity_sold" required placeholder="Enter quantity sold">
+                </div>
+                <button type="submit" name="sell_sweet" class="btn btn-success btn-lg w-100">Sell Sweet</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Sales Report -->
+<section class="container mb-5">
+    <h2 class="text-center my-5 text-dark">Sales Report</h2>
+    <div class="table-responsive">
+        <table class="table table-hover table-striped table-bordered">
+            <thead class="table-warning">
+                <tr>
+                    <th>Sweets</th>
+                    <th>Quantity Sold</th>
+                    <th>Sale Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sale in sales %}
+                <tr class="bg-light">
+                    <td>{{ sale.sweet.name }}</td>
+                    <td>{{ sale.quantity }}</td>
+                    <td>{{ sale.sale_date|date:"F j, Y, g:i a" }}</td> <!-- Format date here -->
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="3" class="text-center text-muted">No sales recorded yet.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Button to Download the Sales Report -->
+    <div class="text-center my-4">
+        <a href="{% url 'download_sales_report' %}" class="btn btn-success btn-lg">Download Sales Report (CSV)</a>
+    </div>
+</section>
+
+{% endblock %}

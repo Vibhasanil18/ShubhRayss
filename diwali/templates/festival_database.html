@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Diwali Celebrations{% endblock %}
+
+{% block content %}
+<header class="text-center my-5">
+    <h1 class="display-4 text-warning font-weight-bold">🎉 Diwali Celebrations Across Regions 🎉</h1>
+    <p class="lead text-muted">Discover the diversity of Diwali celebrations</p>
+</header>
+
+<section class="container mb-5">
+    <h2 class="text-center">Explore Events</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Region</th>
+                    <th>Special Sweets</th>
+                    <th>How Do You Celebrate Diwali?</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                <tr>
+                    <td>{{ event.region }}</td>
+                    <td>{{ event.special_sweets }}</td>
+                    <td>{{ event.celebration_description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="container my-5">
+    <h2 class="text-center">Share Your Diwali Celebrations</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="region">Your Region</label>
+            <input type="text" id="region" name="region" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="special_sweets">Special Sweets</label>
+            <input type="text" id="special_sweets" name="special_sweets" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="celebration_description">How Do You Celebrate Diwali?</label>
+            <textarea id="celebration_description" name="celebration_description" rows="4" class="form-control" required></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>
+
+{% endblock %}

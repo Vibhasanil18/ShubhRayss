@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Quiz Results{% endblock %}
+
+{% block content %}
+<div class="container text-center my-5">
+    <h1 class="text-success">🎉 Quiz Completed! 🎉</h1>
+    <p class="lead">You scored <strong>{{ score }}</strong> out of <strong>{{ total }}</strong>.</p>
+    <p class="lead">Great job on testing your knowledge of Diwali!</p>
+    <a href="{% url 'quiz' %}" class="btn btn-primary mt-3">Try Again</a>
+</div>
+
+<div>
+    <br><br><br><br><br><br>
+</div>
+{% endblock %}
